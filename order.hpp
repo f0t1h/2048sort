@@ -23,9 +23,9 @@ template <class K, class C> struct Sorter2048 {
     int level;
     bool operator<(const Job &other) const {
       if (level == other.level) {
-        return id > other.id; // Higher ID has lower priority
+        return id > other.id;
       }
-      return level < other.level; // Higher level has lower priority
+      return level < other.level;
     }
     std::string filename() const {
       return std::to_string(id) + "_" + std::to_string(level) + ".tmp";
@@ -206,7 +206,7 @@ template <class K, class C> struct Sorter2048 {
           Job job2 = *second;
           Job merged{job_idx++, job1.level + 1};
 
-          // Erase iterators first to avoid invalidation issues
+
           JQ.erase(second);
           JQ.erase(first);
 
