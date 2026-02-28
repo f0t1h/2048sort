@@ -13,13 +13,6 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 endif()
 
 
-FetchContent_Declare(
-    concurrentqueue
-    GIT_REPOSITORY https://github.com/cameron314/concurrentqueue.git
-    GIT_TAG master
-)
-
-FetchContent_MakeAvailable(concurrentqueue)
 
 add_executable(${PROJECT_NAME} main.cpp)
-target_link_libraries(${PROJECT_NAME} PRIVATE concurrentqueue)
+# target_link_libraries(${PROJECT_NAME} PRIVATE)
